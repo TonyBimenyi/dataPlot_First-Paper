@@ -16,9 +16,12 @@ with open(file_path, 'r') as file:
 #Extract the CH3 data
 
 ch3_data_match = re.search(r'CH3_Data_OutPut\[\d+\]=\{(.*?)\};',  file_content,re.DOTALL)
-if ch3_data_match:
+ch1_data_match = re.search(r'CH1_Data_OutPut\[\d+\]=\{(.*?)\};',  file_content,re.DOTALL)
+
+if ch3_data_match & ch1_data_match:
     #Convert the extracted data to a list of floats
     ch3_data = list(map(float, ch3_data_match.group(1).split(',')))
+    ch1_data = list(map(float, ch1_data_match.group(1).split(',')))
 
      # Plot the data
     plt.figure(figsize=(10, 6))
