@@ -27,7 +27,7 @@ if ch3_data_match and ch1_data_match and ch2_data_match:
 
      # Plot the data
     plt.figure(figsize=(10, 6))
-    plt.plot(ch1_data, '-*', label='CH2_Data_OutPut[1707]', color='green', markersize=6)
+    plt.plot(ch1_data, '-*', label='CH2_Data_OutPut[1707]', color='green', markersize=6.5)
     plt.plot(ch3_data,'-', label='CH3_Data_OutPut[1707]', color='blue', markersize=2)
     plt.plot(ch1_data, label='CH1_Data_OutPut[1707]', color='red')
 
@@ -35,7 +35,7 @@ if ch3_data_match and ch1_data_match and ch2_data_match:
     plt.xlabel('Index')
     plt.ylabel('Value')
     # Adding multiple grids
-    plt.grid(True, which='major', color='black', linestyle='-', linewidth=0.85)  # Major grid
+    plt.grid(True, which='major', color='black', linestyle='-', linewidth=0.8)  # Major grid
     plt.grid(True, which='minor', color='gray', linestyle='--', linewidth=0.5)  # Minor grid
     plt.minorticks_on()  # Enable minor ticks for better detai
     plt.legend()
