@@ -29,13 +29,14 @@ if ch3_data_match and ch1_data_match and ch2_data_match:
 
      # Plot the data
     plt.figure(figsize=(10, 6))
-    plt.plot(ch2_data,'-o', label='CH3_Data_OutPut[1707]', color='blue', markersize=5)
-    plt.plot(ch1_data, '-*', label='CH2_Data_OutPut[1707]', color='green', markersize=6.5)
-    plt.plot(ch4_data, '--', label='CH1_Data_OutPut[1707]', color='black', markersize=6.5)
-    plt.plot(ch3_data, '--', label='CH1_Data_OutPut[1707]', color='red')
+    plt.plot(ch2_data,'-o', label='Reference Trajectory', color='blue', markersize=4.5)
+    plt.plot(ch1_data, '-*', label='Motor1', color='green', markersize=5.5)
+    plt.plot(ch3_data, '-', label='Motor 2', color='red', markersize=2.5)
+    plt.plot(ch4_data, '--', label='Motor 3', color='orange', markersize=0.5)
+
 
     plt.title('DC-Motors Tracking Performance', fontweight='bold')
-    plt.xlabel('Index')
+    plt.xlabel('Steps')
     plt.ylabel('Value')
     # Adding multiple grids
     plt.grid(True, which='major', color='black', linestyle='-', linewidth=0.8)  # Major grid
