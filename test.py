@@ -1,4 +1,4 @@
-import numpy as np
+# import numpy as np
 import matplotlib.pyplot as plt
 import re
 
@@ -29,12 +29,12 @@ if ch3_data_match and ch1_data_match and ch2_data_match:
 
      # Plot the data
     plt.figure(figsize=(10, 6))
-    plt.plot(ch2_data,'-', label='CH3_Data_OutPut[1707]', color='blue', markersize=7)
+    plt.plot(ch2_data,'-o', label='CH3_Data_OutPut[1707]', color='blue', markersize=5)
     plt.plot(ch1_data, '-*', label='CH2_Data_OutPut[1707]', color='green', markersize=6.5)
-    plt.plot(ch4_data, '--', label='CH1_Data_OutPut[1707]', color='black')
+    plt.plot(ch4_data, '--', label='CH1_Data_OutPut[1707]', color='black', markersize=6.5)
     plt.plot(ch3_data, '--', label='CH1_Data_OutPut[1707]', color='red')
 
-    plt.title('CH3_Data_OutPut[1707] Plot', fontweight='bold')
+    plt.title('DC-Motors Tracking Performance', fontweight='bold')
     plt.xlabel('Index')
     plt.ylabel('Value')
     # Adding multiple grids
