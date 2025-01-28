@@ -20,18 +20,24 @@ ch1_data_match = re.search(r'CH1_Data_OutPut\[\d+\]=\{(.*?)\};',  file_content,r
 ch2_data_match = re.search(r'CH2_Data_OutPut\[\d+\]=\{(.*?)\};',  file_content,re.DOTALL)
 ch4_data_match = re.search(r'CH4_Data_OutPut\[\d+\]=\{(.*?)\};',  file_content,re.DOTALL)
 
-if ch3_data_match and ch1_data_match and ch2_data_match:
+
+
+if ch3_data_match and ch1_data_match and ch2_data_match and ch4_data_match:
     #Convert the extracted data to a list of floats
     ch3_data = list(map(float, ch3_data_match.group(1).split(',')))
     ch1_data = list(map(float, ch1_data_match.group(1).split(',')))
     ch2_data = list(map(float, ch2_data_match.group(1).split(',')))
     ch4_data = list(map(float, ch4_data_match.group(1).split(',')))
 
+    error_1 = ch1_data-ch2_data
+
      # Plot the data
     plt.figure(figsize=(10, 6))
-    plt.plot(ch2_data,'-o', label='Reference Trajectory', color='blue', markersize=4.5)
-    plt.plot(ch1_data, '-*', label='Motor1', color='green', markersize=5.5)
-    plt.plot(ch3_data, '-', label='Motor 2', color='red', markersize=2.5)
+    # plt.plot(ch2_data,'-o', label='Reference Trajectory', color='blue', markersize=4.5)
+    # plt.plot(ch1_data, '-*', label='Motor1', color='green', markersize=5.5)
+    # plt.plot(ch3_data, '-', label='Motor 2', color='red', markersize=2.5)
+    # plt.plot(ch4_data, '--', label='Motor 3', color='orange', markersize=0.5)
+
     plt.plot(ch4_data, '--', label='Motor 3', color='orange', markersize=0.5)
 
 
