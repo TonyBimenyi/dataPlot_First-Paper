@@ -35,19 +35,21 @@ if ch3_data_match and ch1_data_match and ch2_data_match and ch4_data_match:
 
      # Plot the data
     plt.figure(figsize=(10, 6))
-    plt.plot(ch2_data,'-o', label='Reference Trajectory', color='blue', markersize=4.5)
-    plt.plot(ch1_data, '-*', label='Motor1', color='green', markersize=5.5)
-    plt.plot(ch3_data, '-', label='Motor 2', color='red', markersize=2.5)
-    plt.plot(ch4_data, '--', label='Motor 3', color='orange', markersize=0.5)
+    plt.plot(ch2_data,'-',  linewidth=2, label='Reference Trajectory', color='blue', markersize=4.5)
+    plt.plot(ch1_data, '-.', linewidth=2, label='Motor1', color='green', markersize=5.5)
+    plt.plot(ch3_data, '-', linewidth=2, label='Motor 2', color='red', markersize=2.5)
+    plt.plot(ch4_data, '-.', linewidth=2, label='Motor 3', color='orange', markersize=0.5)
+    plt.xlim(0,1660)  # Set y-axis to range from -0.35 to 0.35
 
-
-    plt.title('DC-Motors Tracking Performance', fontweight='bold')
-    plt.xlabel('Steps')
-    plt.ylabel('Value')
+    # plt.title('DC-Motors Tracking Performance', fontweight='bold')
+    plt.xlabel('Time step',fontsize=14)
+    plt.ylabel('Output',fontsize=14)
+    plt.xticks(fontsize=12)
+    plt.yticks(fontsize=12)
     # Adding multiple grids
-    plt.grid(True, which='major', color='black', linestyle='-', linewidth=0.8)  # Major grid
-    plt.grid(True, which='minor', color='gray', linestyle='--', linewidth=0.5)  # Minor grid
-    plt.minorticks_on()  # Enable minor ticks for better detai
+    # plt.grid(False, which='major', color='black', linestyle='-', linewidth=0.8)  # Major grid
+    # plt.grid(False, which='minor', color='gray', linestyle='--', linewidth=0.5)  # Minor grid
+    # plt.minorticks_on()  # Enable minor ticks for better detai
     plt.legend()
     plt.show()
 else:
